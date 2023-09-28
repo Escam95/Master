@@ -50,11 +50,11 @@ for room in range(0, num_rooms):
             forms.append(general_line)
             cables.pop(cable_type)
         #
-        print(cables)
+        #  print(cables)
         #
     first_line += num_maschines + 1
     #
-    print(forms)
+    #  print(forms)
     #
 
     for i in range(len(forms)):
@@ -62,9 +62,8 @@ for room in range(0, num_rooms):
 
             #  compare(forms[i], forms[j])
             try:
-                #####
                 y = (forms[j][0] * forms[i][2] - forms[i][0] * forms[j][2]) / \
-                    (forms[j][0] * forms[i][1] - forms[i][0] * forms[j][1])
+                    (- forms[j][0] * forms[i][1] + forms[i][0] * forms[j][1])
                 x = (- forms[i][1] * y - forms[i][2]) / (forms[i][0])
                 if 0 <= x <= w and 0 <= y <= h:
                     intersection += 1
